@@ -81,6 +81,8 @@ async function run() {
   const version = semver.inc(currentVersion, getVersionType());
   const branch = `release/v${version}`;
 
+  console.log(branch);
+
   const command = spawn(
     `git checkout -b ${branch} && yarn app:version ${version} && git add --all && git commit -m "final" && git push -u origin ${branch}`,
     { shell: true }
