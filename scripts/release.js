@@ -86,6 +86,10 @@ async function run() {
     { shell: true }
   );
 
+  command.on("error", (err) => {
+    console.log(err);
+  });
+
   command.on("exit", () => {
     exec(`git checkout ${currentBranch}`);
   });
