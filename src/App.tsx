@@ -2,17 +2,17 @@ import logo from "./logo.svg";
 import tauriCircles from "./tauri.svg";
 import tauriWord from "./wordmark.svg";
 import "./App.css";
-import { checkUpdate } from "@tauri-apps/api/updater";
-import { useState } from "react";
+// import { checkUpdate } from "@tauri-apps/api/updater";
+// import { useState } from "react";
 
 function App() {
-  const [isUpdateAvailable, setUpdateAvailable] = useState(false);
+  // const [isUpdateAvailable, setUpdateAvailable] = useState(false);
 
-  async function checkForUpdates() {
-    const res = await checkUpdate();
-    setUpdateAvailable(res.shouldUpdate);
-    console.log(res);
-  }
+  // async function checkForUpdates() {
+  //   const res = await checkUpdate();
+  //   setUpdateAvailable(res.shouldUpdate);
+  //   console.log(res);
+  // }
 
   return (
     <div className="App">
@@ -41,8 +41,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <button onClick={checkForUpdates}>Check For Updates</button>
-        {isUpdateAvailable ? <button>Update App</button> : null}
+        {/* <button onClick={checkForUpdates}>Check For Updates</button>
+        {isUpdateAvailable ? <button>Update App</button> : null} */}
       </header>
     </div>
   );
