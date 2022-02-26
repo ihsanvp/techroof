@@ -55,7 +55,9 @@ async function getLatestVersion() {
     if (data.tag_name) {
       version = semver.valid(data.tag_name);
     }
-  } catch {}
+  } catch (err) {
+    console.log(err);
+  }
 
   return version;
 }
