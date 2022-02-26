@@ -1,0 +1,22 @@
+[package]
+name = "techroof"
+version = "0.0.0"
+description = "A Tauri App"
+authors = [ "ihsanvp" ]
+license = ""
+repository = ""
+default-run = "techroof"
+edition = "2021"
+rust-version = "1.57"
+
+[build-dependencies]
+tauri-build = { version = "1.0.0-rc.3", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = [ "derive" ] }
+tauri = { version = "1.0.0-rc.3", features = ["api-all", "updater"] }
+
+[features]
+default = [ "custom-protocol" ]
+custom-protocol = [ "tauri/custom-protocol" ]
