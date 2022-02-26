@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Hello World</h1>
         <div className="inline-logo">
           <img src={tauriCircles} className="App-logo rotate" alt="logo" />
           <img src={tauriWord} className="App-logo smaller" alt="logo" />
