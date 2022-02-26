@@ -46,7 +46,7 @@ async function getLatestVersion() {
     };
 
     const res = await fetch(
-      "https://api.github.com/repos/ihsanvp/techroof-test/releases/latest",
+      "https://api.github.com/repos/ihsanvp/techroof/releases/latest",
       headers
     );
 
@@ -54,6 +54,8 @@ async function getLatestVersion() {
 
     if (data.tag_name) {
       version = semver.valid(data.tag_name);
+    } else {
+      console.log("cannot find latest version -> using default version 0.0.0");
     }
   } catch (err) {
     console.log(err);
@@ -82,8 +84,6 @@ async function run() {
 
   const version = semver.inc(currentVersion, getVersionType());
   const branch = `release/v${version}`;
-
-  console.log(branch);
 
   const command = spawn(
     `git checkout -b ${branch} && yarn app:version ${version} && git add --all && git commit -m "final" && git push -u origin ${branch}`,
